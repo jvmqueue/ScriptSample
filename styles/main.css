@@ -1,0 +1,28 @@
+#index h4{
+    padding:0 0 0 1.3em;
+}
+#index section{
+    min-width:900px;
+}
+.colRight{
+    float:right;
+    padding:37px 0 0 0;
+    width:40%;
+}
+.colLeft{
+    float:left;
+    width:40%;
+}
+.clear{
+    clear:both;
+}
+ .button{
+    background:url(../images/Promethean_Logo.png) no-repeat; 
+    border-radius:10px;
+    width:800px;
+    height:70px;
+    cursor:pointer;
+ }
+ .button:hover{
+    opacity:0.7;
+ }

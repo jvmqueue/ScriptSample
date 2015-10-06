@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promethean Exam: Glenn Blankenship</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body id="index">
+    <section>
+        <div class="colLeft">
+            <h3 id="missingElement" class="button">1. Missing element</h3>
+            <h4>Implement cloneAndRemoveOneElement() and findMissingElement();</h4>
+            <ol>
+                <li>var a = generateRandomArray();</li>    
+                <li>var b = cloneAndRemoveOneElement(a);</li>    
+                <li>var c = findMissingElement(a, b);</li>    
+            </ol>            
+        </div>
+        <div id="missingElementSolution" class="colRight">Solution: array vals: 3,4,5,6,7,8 </div>
+    </section>
+    <hr class="clear" />
+    <section>
+        <div class="colLeft">    
+            <h3 id="findAllInstances" class="button">2. Find all instances</h3>
+            <h4>console.log(c); // { wordFound: occurences } - { the: 21 }</h4>
+            <h4>Implement findInstances() and most()</h4>
+            <ol>
+                <li>var a = generateLongParagraph();</li>    
+                <li>var b = findInstances(a);</li>    
+                <li>var c = most(b);</li>    
+            </ol>
+        </div>
+        <div id="findAllInstancesSolution" class="colRight">Solution: array vals: 3,4,5,6,7,8 </div>
+    </section>
+    <hr class="clear" />
+    <section>
+        <div class="colLeft">
+            <h3 id="getElementsByClassName" class="button">3. getElementsByClassName(allElements, element, className)</h3>    
+            <h4>Implement getElementsByClassName()</h4>
+            <ol>
+                <li>var a = allElements();</li>    
+                <li>var b = getElementsByClassName(a, 'div', 'blue');</li>    
+            </ol>               
+        </div>
+        <div id="getElementsByClassNameSolution"class="colRight">Solution: array vals: 3,4,5,6,7,8</div>     
+    <script data-main="scripts/main" type="text/javascript" src="scripts/base/require.js"></script>        
+</body>
+</html>
