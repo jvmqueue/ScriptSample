@@ -2,10 +2,11 @@ require(['jquery',
     'projectMissingElement', 
     'projectFindAllInstances', 
     'projectgetElementsByClassName'], 
-    function($, 
-        projMissingElement, 
-        projFindAll, 
-        projGetElement){
+function($, 
+    projMissingElement, 
+    projFindAll, 
+    projGetElement){
+        
     var w = window, d = document;
 
 
