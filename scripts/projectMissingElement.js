@@ -33,7 +33,7 @@ define(['jquery'], function($){
         },
         cloneAndRemoveOneElement:function(paramIntRemoveElementAt){
             this.arryClone = this.arry.slice();
-            var removed = this.arry.splice(paramIntRemoveElementAt, 1);
+            this.arry.splice(paramIntRemoveElementAt, 1);
         },
         findMissingElement:function(){
             this.arryElementsRemoved = new Array();
