@@ -6,7 +6,7 @@ function($,
     projMissingElement, 
     projFindAll, 
     projGetElement){
-        
+
     var w = window, d = document;
 
 
@@ -19,17 +19,17 @@ function($,
 
             switch(id){
                 case 'missingElement':
-                    var projectMissingElement = new projMissingElement.Project();
+                    var projectMissingElement = new projMissingElement.Project(); // singleton, is instantiated once, and once only
                     $node = $(selectorSolution);
                     projectMissingElement.printSolution($node);
                     break;
                 case 'findAllInstances':
-                    var projectFindAll = new projFindAll.Project();
+                    var projectFindAll = new projFindAll.Project(); // singleton, is instantiated once, and once only
                     $node = $(selectorSolution);
                     projectFindAll.printSolution($node);                    
                     break;
                 case 'getElementsByClassName':
-                    var projectGetElement = new projGetElement.Project();
+                    var projectGetElement = new projGetElement.Project(); // singleton, is instantiated once, and once only
                     $node = $(selectorSolution);
                     projectGetElement.printSolution($node);                                        
                     break;
