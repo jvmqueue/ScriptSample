@@ -53,6 +53,8 @@ define(['jquery'], function($){
             var frag = d.createDocumentFragment();
             var nodeTexts = new Array();
             var nodeNew = null;            
+
+            $paramNode.html('Solution: Missing Element');
             
             this.generateRandomArray(7);
             this.cloneAndRemoveOneElement(2);
