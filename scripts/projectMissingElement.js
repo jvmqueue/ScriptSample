@@ -29,20 +29,23 @@ define(['jquery'], function($){
             for(var i = 0; i < len; i++){
                 this.arry.push(i);
             }
-            util.fisherYates(this.arry);            
+            util.fisherYates(this.arry); // we do not need to return instance objects     
         },
         cloneAndRemoveOneElement:function(paramIntRemoveElementAt){
-            this.arryClone = this.arry.slice();
-            this.arry.splice(paramIntRemoveElementAt, 1);
+            this.arryClone = this.arry.slice(); // clone
+            this.arry.splice(paramIntRemoveElementAt, 1); // remove one element at paramIntRemoveElementAt
         },
         findMissingElement:function(){
-            this.arryElementsRemoved = new Array();
-            var strArray = this.arry.join();
+            this.arryElementsRemoved = new Array(); // empty the array
+            var strArray = this.arry.join(); // convert to string for regExp use
+            var strElemnentInClone = null;
+            var regex = null;
+            var strMatchOnArray = null;
 
             for(var i = 0, len = this.arryClone.length; i < len; i++){
-                var strElemnentInClone = this.arryClone[i];
-                var regex = new RegExp(strElemnentInClone);
-                var strMatchOnArray = strArray.match(regex);
+                strElemnentInClone = this.arryClone[i];
+                regex = new RegExp(strElemnentInClone);
+                strMatchOnArray = strArray.match(regex);
                 if(!strMatchOnArray){
                     this.arryElementsRemoved.push(strElemnentInClone);
                 }
