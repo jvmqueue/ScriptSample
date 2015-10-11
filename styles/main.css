@@ -26,3 +26,6 @@
  .button:hover{
     opacity:0.7;
  }
+ .jsBold{
+    font-weight:bold;
+ }
