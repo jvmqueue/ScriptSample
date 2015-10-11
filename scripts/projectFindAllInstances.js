@@ -3,9 +3,10 @@ define([], function(){
     var mInstance = null;
     var _Project = function(){
         this.paragraph = null;
+        this.STR_LABEL = 'Solution: Find All Instances';
     };
 
-    var util = {
+    var util = { // Normally defined in a util library, but keeping code in single location for exam purposes
         appendToDom:function(options){
             frag = d.createDocumentFragment();
             var nodeText = d.createTextNode(options.paramStr);
@@ -18,7 +19,7 @@ define([], function(){
     }; // End util
 
     _Project.prototype = {
-         generateLongParagraph:function(){
+         generateLongParagraph:function(){ // optimization: we do not need jQuery for trivial implementations
             this.paragraph = 'The oldest and, and classical Greek and Latin writing had little or no space between words, and could be written in boustrophedon (alternating directions). Over time, text direction (left to right) became standardized, and word dividers and terminal punctuation became common.';
             var frag = d.createDocumentFragment();            
             var nodeText = d.createTextNode(this.paragraph);
@@ -38,7 +39,7 @@ define([], function(){
          printSolution:function($paramNode){
             var $nodeExist = $paramNode;
             var frag = this.generateLongParagraph();
-            $nodeExist.html('Solution: Find All Instances');
+            $nodeExist.html(this.STR_LABEL); // clear and relabel
             $nodeExist.append(frag);
             var objMatches = this.findInstances('and');
             var strText = 'Found the word "' + objMatches.strWordMatched + '" in paragraph ' + objMatches.intNumOfMatches + ' times';
