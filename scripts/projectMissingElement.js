@@ -21,6 +21,7 @@ define(['jquery'], function($){
         this.arry = null;
         this.arryClone = null;
         this.arryElementsRemoved = null;
+        this.STR_LABEL = 'Solution: Missing Element';
     };
     _Project.prototype = {
         generateRandomArray:function(paramLength){
@@ -59,7 +60,7 @@ define(['jquery'], function($){
             var nodeTexts = new Array();
             var nodeNew = null;            
 
-            $nodeExist.html('Solution: Missing Element');
+            $nodeExist.html(this.STR_LABEL);
             
             this.generateRandomArray(7);
             this.cloneAndRemoveOneElement(2);
