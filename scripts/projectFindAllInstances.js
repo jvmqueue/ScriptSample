@@ -19,11 +19,11 @@ define([], function(){
 
     _Project.prototype = {
          generateLongParagraph:function(){
-            var strParagraph = 'The oldest and, and classical Greek and Latin writing had little or no space between words, and could be written in boustrophedon (alternating directions). Over time, text direction (left to right) became standardized, and word dividers and terminal punctuation became common.';
+            this.paragraph = 'The oldest and, and classical Greek and Latin writing had little or no space between words, and could be written in boustrophedon (alternating directions). Over time, text direction (left to right) became standardized, and word dividers and terminal punctuation became common.';
             var frag = d.createDocumentFragment();            
-            var nodeText = d.createTextNode(strParagraph);
+            var nodeText = d.createTextNode(this.paragraph);
             var nodeNew = d.createElement('div');
-            this.paragraph = strParagraph;
+            
             nodeNew.appendChild(nodeText);
             frag.appendChild(nodeNew);
             return frag;
