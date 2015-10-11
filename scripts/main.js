@@ -15,7 +15,7 @@ function($,
             var target = e.target;
             var id = target.getAttribute('id');
             var node = null;
-            var selectorSolution = '#' + id + 'Solution';
+            var selectorSolution = '#' + id + 'Solution'; // solution printed to this selector
 
             switch(id){
                 case 'missingElement':
@@ -40,8 +40,8 @@ function($,
         },
         setListeners:function(paramSelector){ // single place to define our listeners
             var selector = paramSelector;
-            var nodes = $(selector);
-            nodes.on('click', function(e){
+            var $nodes = $(selector);
+            $nodes.on('click', function(e){
                 controller.getProject(e);
             });
 
@@ -51,8 +51,7 @@ function($,
     var interval = w.setInterval(function(){ // optimization: we do not need jQuery to wait for DOM
         if(d.getElementsByTagName('div').length > 0){
             w.clearInterval(interval);
-            controller.setListeners('.button');
-            
+            controller.setListeners('.button');            
         }
     }, 33);
 
