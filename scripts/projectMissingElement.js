@@ -36,11 +36,12 @@ define(['jquery'], function($){
             this.arry.splice(paramIntRemoveElementAt, 1); // remove one element at paramIntRemoveElementAt
         },
         findMissingElement:function(){
-            this.arryElementsRemoved = new Array(); // empty the array
             var strArray = this.arry.join(); // convert to string for regExp use
             var strElemnentInClone = null;
             var regex = null;
             var strMatchOnArray = null;
+
+            this.arryElementsRemoved = new Array(); // empty the array
 
             for(var i = 0, len = this.arryClone.length; i < len; i++){
                 strElemnentInClone = this.arryClone[i];
@@ -53,19 +54,20 @@ define(['jquery'], function($){
         },
         printSolution:function($paramNode){
             
+            var $nodeExist = $paramNode;
             var frag = d.createDocumentFragment();
             var nodeTexts = new Array();
             var nodeNew = null;            
 
-            $paramNode.html('Solution: Missing Element');
+            $nodeExist.html('Solution: Missing Element');
             
             this.generateRandomArray(7);
             this.cloneAndRemoveOneElement(2);
             this.findMissingElement();
 
-            nodeTexts[0] = d.createTextNode('Initial Array: ' + this.arryClone.join());
-            nodeTexts[1] = d.createTextNode('Array Element Removed: ' + this.arry.join());
-            nodeTexts[2] = d.createTextNode('Missing Elements: ' + this.arryElementsRemoved.join());
+            nodeTexts[0] = d.createTextNode('Initial Array: ' + this.arryClone.join()); // optimization: simple, so, do not need jQuery
+            nodeTexts[1] = d.createTextNode('Array Element Removed: ' + this.arry.join()); // optimization: simple, so, do not need jQuery
+            nodeTexts[2] = d.createTextNode('Missing Elements: ' + this.arryElementsRemoved.join()); // optimization: simple, so, do not need jQuery
 
             for(var i = 0, len = nodeTexts.length; i < len; i++){
                 nodeNew = d.createElement('p');
@@ -73,7 +75,7 @@ define(['jquery'], function($){
                 frag.appendChild(nodeNew);
             }
 
-             $paramNode.append(frag);
+             $nodeExist.append(frag);
          }
     };
     var _getInstance = function(){ // singleton, can be instantiated once
