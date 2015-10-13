@@ -26,6 +26,7 @@
  }
  .button .clickHere{
     font-weight:normal;
+    font-size:0.7em;
  }
  .button:hover{
     opacity:0.7;
