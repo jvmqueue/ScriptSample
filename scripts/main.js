@@ -16,27 +16,25 @@ function($,
             var id = target.getAttribute('id');
             var node = null;
             var selectorSolution = '#' + id + 'Solution'; // solution printed to this selector
+            var projectInstance = null;
+
+            $node = $(selectorSolution);
 
             switch(id){
                 case 'missingElement':
-                    var projectMissingElement = new projMissingElement.Project(); // singleton, is instantiated once, and once only
-                    $node = $(selectorSolution);
-                    projectMissingElement.printSolution($node);
+                    projectInstance = new projMissingElement.Project(); // singleton, is instantiated once, and once only
                     break;
                 case 'findAllInstances':
-                    var projectFindAll = new projFindAll.Project(); // singleton, is instantiated once, and once only
-                    $node = $(selectorSolution);
-                    projectFindAll.printSolution($node);                    
+                    projectInstance = new projFindAll.Project(); // singleton, is instantiated once, and once only
                     break;
                 case 'getElementsByClassName':
-                    var projectGetElement = new projGetElement.Project(); // singleton, is instantiated once, and once only
-                    $node = $(selectorSolution);
-                    projectGetElement.printSolution($node);                                        
+                    projectInstance = new projGetElement.Project(); // singleton, is instantiated once, and once only
                     break;
                 default:
                     /*do nothing, node clicked that was not defined in switch*/            
             }
-            
+
+            projectInstance.printSolution($node);
         },
         setListeners:function(paramSelector){ // single place to define our listeners
             var selector = paramSelector;
