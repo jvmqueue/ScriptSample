@@ -3,7 +3,7 @@ define(['jquery'], function($){
     var mInstance = null;
 
 
-    var util = {
+    var util = { // Normally defined in a util library, but keeping code in single location for exam purposes
         fisherYates:function(paramArray){
             var arry = paramArray;
             var count = arry.length, randomnumber, temp;
@@ -38,18 +38,18 @@ define(['jquery'], function($){
         },
         findMissingElement:function(){
             var strArray = this.arry.join(); // convert to string for regExp use
-            var strElemnentInClone = null;
+            var strElementInClone = null;
             var regex = null;
             var strMatchOnArray = null;
 
             this.arryElementsRemoved = new Array(); // empty the array
 
             for(var i = 0, len = this.arryClone.length; i < len; i++){
-                strElemnentInClone = this.arryClone[i];
-                regex = new RegExp(strElemnentInClone);
+                strElementInClone = this.arryClone[i];
+                regex = new RegExp(strElementInClone);
                 strMatchOnArray = strArray.match(regex);
                 if(!strMatchOnArray){
-                    this.arryElementsRemoved.push(strElemnentInClone);
+                    this.arryElementsRemoved.push(strElementInClone);
                 }
             }
         },
